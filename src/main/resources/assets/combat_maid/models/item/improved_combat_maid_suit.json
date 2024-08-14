@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "combat_maid:item/improved_combat_maid_suit_item"
+  }
+}
