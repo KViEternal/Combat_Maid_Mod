@@ -1,6 +1,5 @@
 package org.KViEternal.combat_maid.materials;
 
-import com.google.common.base.Suppliers;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -12,12 +11,9 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import org.KViEternal.combat_maid.Combat_Maid;
 
-import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
-
-import static net.minecraft.registry.Registry.register;
 
 public class Combat_Maid_Suit_Material {
 

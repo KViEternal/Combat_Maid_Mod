@@ -52,20 +52,20 @@ public class Combat_Maid_Suit_Model extends Model {
 	}
 
 	@Override
-	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
-		Body.render(matrices, vertices, light, overlay, color);
+	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
+		Body.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
 	}
 
-	public void renderSkirt(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
-		Skirt.render(matrices, vertices, light, overlay, color);
+	public void renderSkirt(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
+		Skirt.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
 	}
 
-	public void renderArm(MatrixStack matrices, boolean isLeft, VertexConsumer vertices, int light, int overlay, int color) {
+	public void renderArm(MatrixStack matrices, boolean isLeft, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
 		if(isLeft){
-			LeftArm.render(matrices, vertices, light, overlay, color);
+			LeftArm.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
 		}
 		else {
-			RightArm.render(matrices, vertices, light, overlay, color);
+			RightArm.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
 		}
 	}
 }
