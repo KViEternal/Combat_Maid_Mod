@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "combat_maid",
+  "version": "1.21-v1.0.0-alpha",
+  "name": "Combat Maid",
+  "description": "The mod adds combat maid costumes and weapons. Mod is made for fun, so: Please note that armor and weapons may not be balanced for the vanilla game.",
+  "authors": ["KViEternal"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/combat_maid/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.KViEternal.combat_maid.client.Combat_MaidClient"
+    ],
+    "main": [
+      "org.KViEternal.combat_maid.Combat_Maid"
+    ]
+  },
+  "mixins": [
+    "combat_maid.mixins.json",
+    {
+      "config": "combat_maid.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "fabric": "*",
+    "minecraft": "1.21"
+  }
+}

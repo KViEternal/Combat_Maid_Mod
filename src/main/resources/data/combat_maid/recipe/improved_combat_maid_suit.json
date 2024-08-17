@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "combat_maid:combat_maid_suit"
+    },
+    {
+      "item": "minecraft:elytra"
+    }
+  ],
+  "result": {
+    "id": "combat_maid:improved_combat_maid_suit",
+    "count": 1
+  }
+}

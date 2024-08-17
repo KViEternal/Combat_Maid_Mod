@@ -17,8 +17,8 @@ public class Combat_Maid implements ModInitializer {
 
     public static final Logger LOGGER = LoggerFactory.getLogger("combat_maid");
     public static final Item Reinforced_Cloth = register(new Reinforced_Cloth(), "reinforced_cloth");
-    public static final Item Maid_Suit_Item = register(new Combat_Maid_Suit_Item(new Combat_Maid_Suit_Material(), ArmorItem.Type.CHESTPLATE), "combat_maid_suit");
-    public static final Item Improved_Maid_Suit_Item = register(new Improved_Combat_Maid_Suit_Item(new Combat_Maid_Suit_Material(), ArmorItem.Type.CHESTPLATE), "improved_combat_maid_suit");
+    public static final Item Maid_Suit_Item = register(new Combat_Maid_Suit_Item(Combat_Maid_Suit_Material.Combat_Maid_Suit_Material, ArmorItem.Type.CHESTPLATE), "combat_maid_suit");
+    public static final Item Improved_Maid_Suit_Item = register(new Improved_Combat_Maid_Suit_Item(Combat_Maid_Suit_Material.Combat_Maid_Suit_Material, ArmorItem.Type.CHESTPLATE), "improved_combat_maid_suit");
 
     @Override
     public void onInitialize() {
