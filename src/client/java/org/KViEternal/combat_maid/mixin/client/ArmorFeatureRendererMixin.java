@@ -33,43 +33,60 @@ public class ArmorFeatureRendererMixin {
     @Inject(method = "render", at = @At("HEAD"))
     private void render(MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, LivingEntity livingEntity, float f, float g, float h, float j, float k, float l, CallbackInfo info) {
         ItemStack itemStack = livingEntity.getEquippedStack(EquipmentSlot.CHEST);
+
         if (!(itemStack.isEmpty()) && (itemStack.getItem() == Maid_Suit_Item || itemStack.getItem() == Improved_Maid_Suit_Item)) {
-            VertexConsumer vertexConsumer = ItemRenderer.getArmorGlintConsumer(vertexConsumerProvider, this.maid_suit_model.getLayer(new Identifier("combat_maid", "textures/entity/combat_maid_suit.png")), false, itemStack.hasGlint());
+            VertexConsumer vertexConsumer = ItemRenderer.getArmorGlintConsumer(vertexConsumerProvider,
+                    this.maid_suit_model.getLayer(new Identifier("combat_maid", "textures/entity/combat_maid_suit.png")),
+                    false, itemStack.hasGlint());
 
-            maid_suit_model.LeftArm.setTransform(((BipedEntityModel<?>) ((ArmorFeatureRenderer) (Object) this).getContextModel()).leftArm.getTransform());
-            maid_suit_model.RightArm.setTransform(((BipedEntityModel<?>) ((ArmorFeatureRenderer) (Object) this).getContextModel()).rightArm.getTransform());
+            BipedEntityModel<?> contextModel = (BipedEntityModel<?>) ((ArmorFeatureRenderer) (Object) this).getContextModel();
 
-            matrixStack.push();
-            matrixStack.translate(0.0D, 0.0D, 0.0D);
-            matrixStack.scale(1.0F, 1.0F, 1.0F);
-            ((BipedEntityModel<?>) ((ArmorFeatureRenderer) (Object) this).getContextModel()).body.rotate(matrixStack);
-            this.maid_suit_model.render(matrixStack, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
-            matrixStack.pop();
+            this.maid_suit_model.LeftArm.setTransform(contextModel.leftArm.getTransform());
+            this.maid_suit_model.RightArm.setTransform(contextModel.rightArm.getTransform());
 
-            matrixStack.push();
-            matrixStack.translate(0.0D, 0.0D, 0.0D);
-            matrixStack.scale(1.0F, 1.0F, 1.0F);
-
-            if(((BipedEntityModel<?>) ((ArmorFeatureRenderer) (Object) this).getContextModel()).sneaking){
-                maid_suit_model.Skirt.pivotZ = -1f;
-                matrixStack.translate(0.0D, 0.2D, 0.21D);
-                maid_suit_model.Skirt.pitch = 0.2f;
-            }
-
-            this.maid_suit_model.renderSkirt(matrixStack, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
-
-            if(((BipedEntityModel<?>) ((ArmorFeatureRenderer) (Object) this).getContextModel()).sneaking){
-                maid_suit_model.Skirt.pivotZ = 0f;
-                maid_suit_model.Skirt.pitch = 0f;
-            }
-            matrixStack.pop();
-
-            matrixStack.push();
-            matrixStack.translate(0.0D, 0.0D, 0.0D);
-            matrixStack.scale(1.0F, 1.0F, 1.0F);
-            this.maid_suit_model.renderArm(matrixStack, true, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
-            this.maid_suit_model.renderArm(matrixStack, false, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
-            matrixStack.pop();
+            renderMainBody(matrixStack, vertexConsumer, i);
+            renderSkirt(matrixStack, vertexConsumer, i, contextModel);
+            renderArms(matrixStack, vertexConsumer, i);
         }
+    }
+
+    private void renderMainBody(MatrixStack matrixStack, VertexConsumer vertexConsumer, int i) {
+        matrixStack.push();
+        matrixStack.translate(0.0D, 0.0D, 0.0D);
+        matrixStack.scale(1.0F, 1.0F, 1.0F);
+
+        BipedEntityModel<?> contextModel = (BipedEntityModel<?>) ((ArmorFeatureRenderer) (Object) this).getContextModel();
+        contextModel.body.rotate(matrixStack);
+
+        this.maid_suit_model.render(matrixStack, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
+        matrixStack.pop();
+    }
+
+    private void renderSkirt(MatrixStack matrixStack, VertexConsumer vertexConsumer, int i, BipedEntityModel<?> contextModel) {
+        matrixStack.push();
+
+        if (contextModel.sneaking) {
+            maid_suit_model.Skirt.pivotZ = -1f;
+            matrixStack.translate(0.0D, 0.2D, 0.21D);
+            maid_suit_model.Skirt.pitch = 0.2f;
+        }
+
+        this.maid_suit_model.renderSkirt(matrixStack, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
+
+        if (contextModel.sneaking) {
+            maid_suit_model.Skirt.pivotZ = 0f;
+            maid_suit_model.Skirt.pitch = 0f;
+        }
+
+        matrixStack.pop();
+    }
+
+    private void renderArms(MatrixStack matrixStack, VertexConsumer vertexConsumer, int i) {
+        matrixStack.push();
+
+        this.maid_suit_model.renderArm(matrixStack, true, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
+        this.maid_suit_model.renderArm(matrixStack, false, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
+
+        matrixStack.pop();
     }
 }

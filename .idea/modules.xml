@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Combat Maid Mod.Combat_Maid_Mod.client.iml" filepath="$PROJECT_DIR$/.idea/modules/Combat Maid Mod.Combat_Maid_Mod.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Combat Maid Mod.Combat_Maid_Mod.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Combat Maid Mod.Combat_Maid_Mod.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Combat Maid Mod.Combat_Maid_Mod.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Combat Maid Mod.Combat_Maid_Mod.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Combat_Maid_Mod.client.iml" filepath="$PROJECT_DIR$/.idea/modules/Combat_Maid_Mod.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Combat_Maid_Mod.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Combat_Maid_Mod.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Combat_Maid_Mod.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Combat_Maid_Mod.test.iml" />

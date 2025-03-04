@@ -26,11 +26,26 @@ public abstract class PlayerEntityMixin {
 
     @Shadow public abstract boolean isSpectator();
 
+    @Shadow public abstract void sendAbilitiesUpdate();
+
     @Inject(method = "tick", at = @At("TAIL"))
     private void tick(CallbackInfo ci) {
         ItemStack itemStack = this.getEquippedStack(EquipmentSlot.CHEST);
-        if((!this.isCreative()) && (!this.isSpectator())){
-            this.getAbilities().allowFlying = !(itemStack.isEmpty()) && (itemStack.getItem() == Improved_Maid_Suit_Item);
+
+        if (!this.isCreative() && !this.isSpectator()) {
+            boolean isWearingImprovedMaidSuit = itemStack.getItem() == Improved_Maid_Suit_Item;
+
+            if (isWearingImprovedMaidSuit) {
+                if (!this.getAbilities().allowFlying) {
+                    this.getAbilities().allowFlying = true;
+                    this.sendAbilitiesUpdate();
+                }
+            } else {
+                if (this.getAbilities().allowFlying) {
+                    this.getAbilities().allowFlying = false;
+                    this.sendAbilitiesUpdate();
+                }
+            }
         }
     }
 }
