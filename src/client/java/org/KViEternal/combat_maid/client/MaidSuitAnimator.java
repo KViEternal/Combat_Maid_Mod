@@ -13,14 +13,13 @@ import java.util.UUID;
  */
 public class MaidSuitAnimator {
 
-    private static final Map<UUID, AnimationState> states = new HashMap<>();
+    private static final AnimationState globalState = new AnimationState();
 
-    public static AnimationState getOrCreate(LivingEntity entity) {
-        return states.computeIfAbsent(entity.getUuid(), uuid -> new AnimationState());
+    public static AnimationState getOrCreate(Object state) {
+        return globalState;
     }
 
     public static void cleanup(UUID uuid) {
-        states.remove(uuid);
     }
 
     public static class AnimationState {
@@ -55,17 +54,17 @@ public class MaidSuitAnimator {
          * Run the physics simulation for one tick.
          * Call this once per game tick per entity, not per frame.
          */
-        public void tick(LivingEntity entity, boolean isSneaking, float legSwingAmount) {
+        public void tick(net.minecraft.client.render.entity.state.BipedEntityRenderState state, boolean isSneaking, float legSwingAmount) {
             float dt = 1.0f / 20.0f; // One tick = 1/20th of a second
 
             if (!initialized) {
-                prevEntityY = (float) entity.getY();
+                prevEntityY = (float) state.y;
                 initialized = true;
                 return;
             }
 
             // --- Chest Y bounce ---
-            float currentY = (float) entity.getY();
+            float currentY = (float) state.y;
             float verticalDelta = currentY - prevEntityY;
             prevEntityY = currentY;
 

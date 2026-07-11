@@ -3,6 +3,7 @@ package org.KViEternal.combat_maid.client;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.minecraft.client.render.OverlayTexture;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.client.render.item.ItemRenderer;
@@ -24,55 +25,54 @@ public class Combat_MaidClient implements ClientModInitializer {
 
         maid_suit_model = new Combat_Maid_Suit_Model(Combat_Maid_Suit_Model.getTexturedModelData().createModel());
 
-        net.minecraft.client.item.ModelPredicateProviderRegistry.register(Combat_Maid.Maid_Suit_Item, Identifier.of("combat_maid", "is_pink"), (stack, world, entity, seed) -> {
-            net.minecraft.component.type.NbtComponent customData = stack.get(net.minecraft.component.DataComponentTypes.CUSTOM_DATA);
-            return (customData != null && customData.contains("maid_suit_color") && customData.copyNbt().getString("maid_suit_color").equals("pink")) ? 1.0f : 0.0f;
-        });
-        net.minecraft.client.item.ModelPredicateProviderRegistry.register(Combat_Maid.Elytra_Maid_Suit_Item, Identifier.of("combat_maid", "is_pink"), (stack, world, entity, seed) -> {
-            net.minecraft.component.type.NbtComponent customData = stack.get(net.minecraft.component.DataComponentTypes.CUSTOM_DATA);
-            return (customData != null && customData.contains("maid_suit_color") && customData.copyNbt().getString("maid_suit_color").equals("pink")) ? 1.0f : 0.0f;
-        });
+// FIXME: In 1.21.2+, model predicates are data-driven.
+        // net.minecraft.client.item.ModelPredicateProviderRegistry.register(Combat_Maid.Maid_Suit_Item, Identifier.of("combat_maid", "is_pink"), (stack, world, entity, seed) -> {
+        //     net.minecraft.component.type.NbtComponent customData = stack.get(net.minecraft.component.DataComponentTypes.CUSTOM_DATA);
+        //     return (customData != null && customData.copyNbt().contains("maid_suit_color") && customData.copyNbt().getString("maid_suit_color").equals("pink")) ? 1.0f : 0.0f;
+        // });
+        // net.minecraft.client.item.ModelPredicateProviderRegistry.register(Combat_Maid.Elytra_Maid_Suit_Item, Identifier.of("combat_maid", "is_pink"), (stack, world, entity, seed) -> {
+        //     net.minecraft.component.type.NbtComponent customData = stack.get(net.minecraft.component.DataComponentTypes.CUSTOM_DATA);
+        //     return (customData != null && customData.copyNbt().contains("maid_suit_color") && customData.copyNbt().getString("maid_suit_color").equals("pink")) ? 1.0f : 0.0f;
+        // });
 
-        ArmorRenderer renderer = (matrices, vertexConsumers, stack, entity, slot, light, contextModel) -> {
+        ArmorRenderer renderer = (matrices, vertexConsumers, stack, entityState, slot, light, contextModel) -> {
+            net.minecraft.client.render.entity.state.BipedEntityRenderState state = (net.minecraft.client.render.entity.state.BipedEntityRenderState) entityState;
             net.minecraft.component.type.NbtComponent customData = stack.get(net.minecraft.component.DataComponentTypes.CUSTOM_DATA);
-            boolean isPink = customData != null && customData.contains("maid_suit_color") && customData.copyNbt().getString("maid_suit_color").equals("pink");
+            boolean isPink = customData != null && customData.copyNbt().contains("maid_suit_color") && customData.copyNbt().getString("maid_suit_color").equals("pink");
             Identifier texture = Identifier.of("combat_maid", isPink
                     ? "textures/entity/combat_maid_suit_pink.png"
                     : "textures/entity/combat_maid_suit_white.png");
-
-            VertexConsumer vertexConsumer = ItemRenderer.getArmorGlintConsumer(
-                    vertexConsumers, maid_suit_model.getLayer(texture), stack.hasGlint());
 
             BipedEntityModel<?> bipedModel = (BipedEntityModel<?>) contextModel;
 
             // ========================================
             // Get per-entity animation state
             // ========================================
-            MaidSuitAnimator.AnimationState animState = MaidSuitAnimator.getOrCreate(entity);
+            MaidSuitAnimator.AnimationState animState = MaidSuitAnimator.getOrCreate(state);
 
             // Tick the physics simulation once per game tick (not per frame)
-            long currentAge = entity.age;
+            long currentAge = (long) state.age;
             if (currentAge != animState.lastTickAge) {
                 animState.lastTickAge = currentAge;
                 float legSwingAmount = Math.abs(bipedModel.rightLeg.pitch) + Math.abs(bipedModel.leftLeg.pitch);
-                animState.tick(entity, bipedModel.sneaking, legSwingAmount);
+                animState.tick(state, state.isInSneakingPose, legSwingAmount);
             }
 
             // ========================================
             // Copy base transforms from the player model
             // ========================================
-            maid_suit_model.Body.copyTransform(bipedModel.body);
-            maid_suit_model.LeftArm.copyTransform(bipedModel.leftArm);
-            maid_suit_model.RightArm.copyTransform(bipedModel.rightArm);
+            copyModelPart(bipedModel.body, maid_suit_model.Body);
+            copyModelPart(bipedModel.leftArm, maid_suit_model.LeftArm);
+            copyModelPart(bipedModel.rightArm, maid_suit_model.RightArm);
 
             // ========================================
             // Chest physics animation
             // ========================================
-            float baseChestPivotY = 1.5f;
+            float baseChestoriginY = 1.5f;
             float chestOffsetY = animState.getChestOffsetY();
             float chestPitchOffset = animState.getChestPitchOffset();
 
-            maid_suit_model.Chest.pivotY = baseChestPivotY + chestOffsetY;
+            maid_suit_model.Chest.originY = baseChestoriginY + chestOffsetY;
             maid_suit_model.Chest.pitch = chestPitchOffset;
 
             // ========================================
@@ -96,19 +96,19 @@ public class Combat_MaidClient implements ClientModInitializer {
             // --- Front ---
             // New pivot: (0, 8, -1.75) relative to Skirt — hinges at the waist line.
             // Pitching from the waist means no vertical gap forms at the top.
-            float baseFrontPivotY = 8.0f;
-            float baseFrontPivotZ = -1.75f;
-            maid_suit_model.Front.pivotY = baseFrontPivotY;
-            maid_suit_model.Front.pivotZ = baseFrontPivotZ;
+            float baseFrontoriginY = 8.0f;
+            float baseFrontoriginZ = -1.75f;
+            maid_suit_model.Front.originY = baseFrontoriginY;
+            maid_suit_model.Front.originZ = baseFrontoriginZ;
             maid_suit_model.Front.pitch = frontPitch;
 
             // --- Back ---
             // New pivot: (-5, 8, 1.75) relative to Skirt — also hinges at the waist line.
             // Shift backward when pitching to clear the body.
-            float baseBackPivotY = 8.0f;
-            float baseBackPivotZ = 1.75f;
-            maid_suit_model.Back.pivotY = baseBackPivotY;
-            maid_suit_model.Back.pivotZ = baseBackPivotZ + backPitch * 0.8f;
+            float baseBackoriginY = 8.0f;
+            float baseBackoriginZ = 1.75f;
+            maid_suit_model.Back.originY = baseBackoriginY;
+            maid_suit_model.Back.originZ = baseBackoriginZ + backPitch * 0.8f;
             maid_suit_model.Back.pitch = backPitch;
 
             // --- Sides ---
@@ -122,16 +122,16 @@ public class Combat_MaidClient implements ClientModInitializer {
             // ========================================
             // Apply sneaking adjustments
             // ========================================
-            if (bipedModel.sneaking) {
+            if (state.isInSneakingPose) {
                 // Body tilts forward when sneaking. Move skirt down with the body:
                 // Vanilla body drops to 3.2f, and legs shift back.
-                maid_suit_model.Skirt.pivotY = 3.2f;
-                maid_suit_model.Skirt.pivotZ = 3.0f;
+                maid_suit_model.Skirt.originY = 3.2f;
+                maid_suit_model.Skirt.originZ = 3.0f;
                 maid_suit_model.Skirt.pitch = 0.20f;
 
                 // Back needs extra clearance + extra backward shift
                 maid_suit_model.Back.pitch += 0.35f;
-                maid_suit_model.Back.pivotZ += 0.35f * 0.8f;
+                maid_suit_model.Back.originZ += 0.35f * 0.8f;
 
                 // Front tucks in slightly
                 maid_suit_model.Front.pitch -= 0.1f;
@@ -139,8 +139,8 @@ public class Combat_MaidClient implements ClientModInitializer {
                 // Extra Z-stretch for sides during sneaking
                 maid_suit_model.Sides.zScale += 0.35f;
             } else {
-                maid_suit_model.Skirt.pivotY = 1.0f;
-                maid_suit_model.Skirt.pivotZ = 0.0f;
+                maid_suit_model.Skirt.originY = 1.0f;
+                maid_suit_model.Skirt.originZ = 0.0f;
                 maid_suit_model.Skirt.pitch = 0.0f;
             }
 
@@ -149,17 +149,28 @@ public class Combat_MaidClient implements ClientModInitializer {
             // ========================================
             matrices.push();
 
+            RenderLayer layer = maid_suit_model.getLayer(texture);
+
             // Render body (includes chest as child)
-            maid_suit_model.render(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV, Colors.WHITE);
+            vertexConsumers.submitModelPart(maid_suit_model.Body, matrices, layer, light, OverlayTexture.DEFAULT_UV, null, false, stack.hasGlint());
 
             if (slot == net.minecraft.entity.EquipmentSlot.CHEST) {
-                maid_suit_model.renderArm(matrices, true, vertexConsumer, light, OverlayTexture.DEFAULT_UV, Colors.WHITE);
-                maid_suit_model.renderArm(matrices, false, vertexConsumer, light, OverlayTexture.DEFAULT_UV, Colors.WHITE);
-                maid_suit_model.renderSkirt(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV, Colors.WHITE);
+                vertexConsumers.submitModelPart(maid_suit_model.LeftArm, matrices, layer, light, OverlayTexture.DEFAULT_UV, null, false, stack.hasGlint());
+                vertexConsumers.submitModelPart(maid_suit_model.RightArm, matrices, layer, light, OverlayTexture.DEFAULT_UV, null, false, stack.hasGlint());
+                vertexConsumers.submitModelPart(maid_suit_model.Skirt, matrices, layer, light, OverlayTexture.DEFAULT_UV, null, false, stack.hasGlint());
             }
             matrices.pop();
         };
 
         ArmorRenderer.register(renderer, Combat_Maid.Maid_Suit_Item, Combat_Maid.Elytra_Maid_Suit_Item);
+    }
+
+    private static void copyModelPart(net.minecraft.client.model.ModelPart from, net.minecraft.client.model.ModelPart to) {
+        to.pitch = from.pitch;
+        to.yaw = from.yaw;
+        to.roll = from.roll;
+        to.originX = from.originX;
+        to.originY = from.originY;
+        to.originZ = from.originZ;
     }
 }
