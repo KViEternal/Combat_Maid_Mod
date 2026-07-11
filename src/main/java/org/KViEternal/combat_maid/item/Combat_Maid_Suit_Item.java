@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Combat_Maid_Suit_Item extends ArmorItem {
     public Combat_Maid_Suit_Item(RegistryEntry<ArmorMaterial> material, Type type) {
-        this(material, type, new Item.Settings().fireproof().rarity(Rarity.EPIC).maxDamage(-1));
+        this(material, type, new Item.Settings().fireproof().rarity(Rarity.EPIC));
     }
 
     public Combat_Maid_Suit_Item(RegistryEntry<ArmorMaterial> material, Type type, Item.Settings settings) {
