@@ -24,7 +24,7 @@ public class MaidSuitDyeRecipe extends SpecialCraftingRecipe {
         boolean hasPinkDye = false;
         boolean hasWhiteDye = false;
 
-        for (int i = 0; i < inventory.getSize(); i++) {
+        for (int i = 0; i < inventory.size(); i++) {
             ItemStack stack = inventory.getStackInSlot(i);
             if (!stack.isEmpty()) {
                 if (stack.getItem() instanceof Combat_Maid_Suit_Item) {
@@ -49,7 +49,7 @@ public class MaidSuitDyeRecipe extends SpecialCraftingRecipe {
         ItemStack maidSuit = ItemStack.EMPTY;
         boolean isPink = false;
 
-        for (int i = 0; i < inventory.getSize(); i++) {
+        for (int i = 0; i < inventory.size(); i++) {
             ItemStack stack = inventory.getStackInSlot(i);
             if (!stack.isEmpty()) {
                 if (stack.getItem() instanceof Combat_Maid_Suit_Item) {
@@ -75,13 +75,11 @@ public class MaidSuitDyeRecipe extends SpecialCraftingRecipe {
         return result;
     }
 
-    @Override
-    public boolean fits(int width, int height) {
-        return width * height >= 2;
-    }
+    
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<MaidSuitDyeRecipe> getSerializer() {
         return ModRecipes.MAID_SUIT_DYE;
     }
 }
+

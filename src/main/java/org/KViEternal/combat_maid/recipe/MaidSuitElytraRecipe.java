@@ -19,7 +19,7 @@ public class MaidSuitElytraRecipe extends SpecialCraftingRecipe {
         boolean hasMaidSuit = false;
         boolean hasElytra = false;
 
-        for (int i = 0; i < inventory.getSize(); i++) {
+        for (int i = 0; i < inventory.size(); i++) {
             ItemStack stack = inventory.getStackInSlot(i);
             if (!stack.isEmpty()) {
                 if (stack.getItem() instanceof Combat_Maid_Suit_Item) {
@@ -30,7 +30,7 @@ public class MaidSuitElytraRecipe extends SpecialCraftingRecipe {
                     hasElytra = true;
                 } else if (stack.isOf(Items.PINK_DYE) || stack.isOf(Items.WHITE_DYE)) {
                     return false;
-                } else if (stack.getItem() instanceof net.minecraft.item.ArmorItem) {
+                } else if (stack.contains(net.minecraft.component.DataComponentTypes.EQUIPPABLE)) {
                     return false;
                 } else {
                     return false;
@@ -45,7 +45,7 @@ public class MaidSuitElytraRecipe extends SpecialCraftingRecipe {
         ItemStack maidSuit = ItemStack.EMPTY;
         ItemStack elytra = ItemStack.EMPTY;
 
-        for (int i = 0; i < inventory.getSize(); i++) {
+        for (int i = 0; i < inventory.size(); i++) {
             ItemStack stack = inventory.getStackInSlot(i);
             if (!stack.isEmpty()) {
                 if (stack.getItem() instanceof Combat_Maid_Suit_Item) {
@@ -77,13 +77,11 @@ public class MaidSuitElytraRecipe extends SpecialCraftingRecipe {
         return result;
     }
 
-    @Override
-    public boolean fits(int width, int height) {
-        return width * height >= 2;
-    }
+    
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<MaidSuitElytraRecipe> getSerializer() {
         return ModRecipes.MAID_SUIT_ELYTRA;
     }
 }
+

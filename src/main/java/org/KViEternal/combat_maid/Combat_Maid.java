@@ -1,7 +1,8 @@
 package org.KViEternal.combat_maid;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.item.ArmorItem;
+
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -14,8 +15,8 @@ import org.slf4j.LoggerFactory;
 public class Combat_Maid implements ModInitializer {
 
     public static final Logger LOGGER = LoggerFactory.getLogger("combat_maid");
-    public static final Item Maid_Suit_Item = register(new Combat_Maid_Suit_Item(Combat_Maid_Suit_Material.COMBAT_MAID_SUIT, ArmorItem.Type.CHESTPLATE), "combat_maid_suit");
-    public static final Item Elytra_Maid_Suit_Item = register(new org.KViEternal.combat_maid.item.Elytra_Combat_Maid_Suit_Item(Combat_Maid_Suit_Material.COMBAT_MAID_SUIT, ArmorItem.Type.CHESTPLATE), "elytra_combat_maid_suit");
+    public static final Item Maid_Suit_Item = register(new Combat_Maid_Suit_Item(Combat_Maid_Suit_Material.COMBAT_MAID_SUIT, EquipmentType.CHESTPLATE), "combat_maid_suit");
+    public static final Item Elytra_Maid_Suit_Item = register(new org.KViEternal.combat_maid.item.Elytra_Combat_Maid_Suit_Item(Combat_Maid_Suit_Material.COMBAT_MAID_SUIT, EquipmentType.CHESTPLATE), "elytra_combat_maid_suit");
 
     @Override
     public void onInitialize() {

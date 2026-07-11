@@ -2,26 +2,26 @@ package org.KViEternal.combat_maid.recipe;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.inventory.RecipeInputInventory;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
-import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Registries;
 import net.minecraft.world.World;
 import org.KViEternal.combat_maid.item.Combat_Maid_Suit_Item;
 
 import net.minecraft.util.Identifier;
-import java.util.Map;
-import java.util.UUID;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.AttributeModifiersComponent;
+import net.minecraft.component.type.AttributeModifierSlot;
+import net.minecraft.component.type.NbtComponent;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
+import net.minecraft.registry.tag.ItemTags;
 
 public class MaidSuitUpgradeRecipe extends SpecialCraftingRecipe {
 
@@ -34,13 +34,13 @@ public class MaidSuitUpgradeRecipe extends SpecialCraftingRecipe {
         boolean hasMaidSuit = false;
         boolean hasChestplate = false;
 
-        for (int i = 0; i < inventory.getSize(); i++) {
+        for (int i = 0; i < inventory.size(); i++) {
             ItemStack stack = inventory.getStackInSlot(i);
             if (!stack.isEmpty()) {
                 if (stack.getItem() instanceof Combat_Maid_Suit_Item) {
                     if (hasMaidSuit) return false;
                     hasMaidSuit = true;
-                } else if (stack.getItem() instanceof ArmorItem armorItem && armorItem.getType() == ArmorItem.Type.CHESTPLATE) {
+                } else if (stack.isIn(ItemTags.CHEST_ARMOR)) {
                     if (hasChestplate) return false;
                     hasChestplate = true;
                 } else if (stack.isOf(Items.ELYTRA)) {
@@ -60,12 +60,12 @@ public class MaidSuitUpgradeRecipe extends SpecialCraftingRecipe {
         ItemStack maidSuit = ItemStack.EMPTY;
         ItemStack chestplate = ItemStack.EMPTY;
 
-        for (int i = 0; i < inventory.getSize(); i++) {
+        for (int i = 0; i < inventory.size(); i++) {
             ItemStack stack = inventory.getStackInSlot(i);
             if (!stack.isEmpty()) {
                 if (stack.getItem() instanceof Combat_Maid_Suit_Item) {
                     maidSuit = stack;
-                } else if (stack.getItem() instanceof ArmorItem armorItem && armorItem.getType() == ArmorItem.Type.CHESTPLATE) {
+                } else if (stack.isIn(ItemTags.CHEST_ARMOR)) {
                     chestplate = stack;
                 }
             }
@@ -78,60 +78,67 @@ public class MaidSuitUpgradeRecipe extends SpecialCraftingRecipe {
         ItemStack result = maidSuit.copy();
         result.setCount(1);
 
-        ArmorItem armorItem = (ArmorItem) chestplate.getItem();
-        net.minecraft.registry.entry.RegistryEntry<ArmorMaterial> material = armorItem.getMaterial();
+        AttributeModifiersComponent chestModifiers = chestplate.getOrDefault(DataComponentTypes.ATTRIBUTE_MODIFIERS, AttributeModifiersComponent.DEFAULT);
+        
+        double baseArmor = 0;
+        double baseToughness = 0;
+        double baseKnockback = 0;
 
-        int totalArmor = material.value().defense().getOrDefault(ArmorItem.Type.HELMET, 0)
-                + material.value().defense().getOrDefault(ArmorItem.Type.CHESTPLATE, 0)
-                + material.value().defense().getOrDefault(ArmorItem.Type.LEGGINGS, 0)
-                + material.value().defense().getOrDefault(ArmorItem.Type.BOOTS, 0);
+        for (AttributeModifiersComponent.Entry entry : chestModifiers.modifiers()) {
+            if (entry.attribute().equals(EntityAttributes.ARMOR)) {
+                baseArmor += entry.modifier().value();
+            } else if (entry.attribute().equals(EntityAttributes.ARMOR_TOUGHNESS)) {
+                baseToughness += entry.modifier().value();
+            } else if (entry.attribute().equals(EntityAttributes.KNOCKBACK_RESISTANCE)) {
+                baseKnockback += entry.modifier().value();
+            }
+        }
 
-        float totalToughness = material.value().toughness() * 4.0f;
-        float totalKnockback = material.value().knockbackResistance() * 4.0f;
+        int totalArmor = (int) Math.round(baseArmor * 2.5);
+        float totalToughness = (float) (baseToughness * 4.0);
+        float totalKnockback = (float) (baseKnockback * 4.0);
 
         Identifier modifierId = Identifier.of("combat_maid", "maid_suit_upgrade");
-        net.minecraft.component.type.AttributeModifiersComponent.Builder modifiers = net.minecraft.component.type.AttributeModifiersComponent.builder();
+        AttributeModifiersComponent.Builder modifiers = AttributeModifiersComponent.builder();
         
-        modifiers.add(EntityAttributes.GENERIC_ARMOR, new EntityAttributeModifier(modifierId, totalArmor, EntityAttributeModifier.Operation.ADD_VALUE), net.minecraft.component.type.AttributeModifierSlot.CHEST);
+        modifiers.add(EntityAttributes.ARMOR, new EntityAttributeModifier(modifierId, totalArmor, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.CHEST);
         
         if (totalToughness > 0) {
-            modifiers.add(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, new EntityAttributeModifier(modifierId, totalToughness, EntityAttributeModifier.Operation.ADD_VALUE), net.minecraft.component.type.AttributeModifierSlot.CHEST);
+            modifiers.add(EntityAttributes.ARMOR_TOUGHNESS, new EntityAttributeModifier(modifierId, totalToughness, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.CHEST);
         }
         
         if (totalKnockback > 0) {
-            modifiers.add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, new EntityAttributeModifier(modifierId, totalKnockback, EntityAttributeModifier.Operation.ADD_VALUE), net.minecraft.component.type.AttributeModifierSlot.CHEST);
+            modifiers.add(EntityAttributes.KNOCKBACK_RESISTANCE, new EntityAttributeModifier(modifierId, totalKnockback, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.CHEST);
         }
         
-        result.set(net.minecraft.component.DataComponentTypes.ATTRIBUTE_MODIFIERS, modifiers.build());
+        result.set(DataComponentTypes.ATTRIBUTE_MODIFIERS, modifiers.build());
 
         String path = Registries.ITEM.getId(chestplate.getItem()).getPath();
         String materialName = path.replace("_chestplate", "");
         
-        net.minecraft.component.type.NbtComponent customData = result.getOrDefault(net.minecraft.component.DataComponentTypes.CUSTOM_DATA, net.minecraft.component.type.NbtComponent.DEFAULT);
+        NbtComponent customData = result.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
         NbtCompound nbt = customData.copyNbt();
         nbt.putString("combat_maid_base_material", materialName);
-        result.set(net.minecraft.component.DataComponentTypes.CUSTOM_DATA, net.minecraft.component.type.NbtComponent.of(nbt));
+        result.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
 
-        net.minecraft.component.type.ItemEnchantmentsComponent maidEnchants = maidSuit.getOrDefault(net.minecraft.component.DataComponentTypes.ENCHANTMENTS, net.minecraft.component.type.ItemEnchantmentsComponent.DEFAULT);
-        net.minecraft.component.type.ItemEnchantmentsComponent chestEnchants = chestplate.getOrDefault(net.minecraft.component.DataComponentTypes.ENCHANTMENTS, net.minecraft.component.type.ItemEnchantmentsComponent.DEFAULT);
+        ItemEnchantmentsComponent maidEnchants = maidSuit.getOrDefault(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+        ItemEnchantmentsComponent chestEnchants = chestplate.getOrDefault(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
         
         if (maidEnchants.isEmpty() && !chestEnchants.isEmpty()) {
-            result.set(net.minecraft.component.DataComponentTypes.ENCHANTMENTS, chestEnchants);
-            if (chestplate.contains(net.minecraft.component.DataComponentTypes.REPAIR_COST)) {
-                result.set(net.minecraft.component.DataComponentTypes.REPAIR_COST, chestplate.get(net.minecraft.component.DataComponentTypes.REPAIR_COST));
+            result.set(DataComponentTypes.ENCHANTMENTS, chestEnchants);
+            if (chestplate.contains(DataComponentTypes.REPAIR_COST)) {
+                result.set(DataComponentTypes.REPAIR_COST, chestplate.get(DataComponentTypes.REPAIR_COST));
             }
         }
 
         return result;
     }
 
-    @Override
-    public boolean fits(int width, int height) {
-        return width * height >= 2;
-    }
+    
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<MaidSuitUpgradeRecipe> getSerializer() {
         return ModRecipes.MAID_SUIT_UPGRADE;
     }
 }
+
