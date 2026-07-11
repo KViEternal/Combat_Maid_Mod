@@ -4,7 +4,8 @@
   "package": "org.KViEternal.combat_maid.mixin.client",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "ArmorFeatureRendererMixin"
+    "PlayerEntityModelMixin",
+    "ElytraFeatureRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

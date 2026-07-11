@@ -3,4 +3,12 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="19" />
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Combat_Maid_Mod" options="&quot;-AoutRefMapFile=F:\_KVi_Projects\.minecraft\Combat Maid Mod\build\classes\java\client\client-Combat-Maid-Mod-refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=F:\_KVi_Projects\.minecraft\Combat Maid Mod\build\loom-cache\mixin-map-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.client.tiny&quot; -AinMapFileNamedIntermediary=C:\Users\KViEternal\.gradle\caches\fabric-loom\1.21.1\net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2\mappings.tiny" />
+      <module name="Combat_Maid_Mod.client" options="&quot;-AoutRefMapFile=F:\_KVi_Projects\.minecraft\Combat Maid Mod\build\classes\java\client\client-Combat-Maid-Mod-refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=F:\_KVi_Projects\.minecraft\Combat Maid Mod\build\loom-cache\mixin-map-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.client.tiny&quot; -AinMapFileNamedIntermediary=C:\Users\KViEternal\.gradle\caches\fabric-loom\1.21.1\net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2\mappings.tiny" />
+      <module name="Combat_Maid_Mod.test" options="&quot;-AoutRefMapFile=F:\_KVi_Projects\.minecraft\Combat Maid Mod\build\classes\java\test\test-Combat-Maid-Mod-refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=F:\_KVi_Projects\.minecraft\Combat Maid Mod\build\loom-cache\mixin-map-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.test.tiny&quot; -AinMapFileNamedIntermediary=C:\Users\KViEternal\.gradle\caches\fabric-loom\1.21.1\net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2\mappings.tiny" />
+      <module name="org.KViEternal.Combat_Maid_Mod.main" options="&quot;-AoutRefMapFile=F:\_KVi_Projects\.minecraft\Combat Maid Mod\build\classes\java\main\Combat-Maid-Mod-refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=F:\_KVi_Projects\.minecraft\Combat Maid Mod\build\loom-cache\mixin-map-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.main.tiny&quot; -AinMapFileNamedIntermediary=C:\Users\KViEternal\.gradle\caches\fabric-loom\1.21.1\net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2\mappings.tiny" />
+    </option>
+  </component>
 </project>

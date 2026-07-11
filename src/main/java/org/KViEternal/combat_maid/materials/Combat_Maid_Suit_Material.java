@@ -21,9 +21,9 @@ import static net.minecraft.registry.Registry.register;
 
 public class Combat_Maid_Suit_Material {
 
-    public static final RegistryEntry<ArmorMaterial> Combat_Maid_Suit_Material = registerMaterial("combat_maid_suit", Map.of(
-            ArmorItem.Type.CHESTPLATE, 25
-    ), 20, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, () -> Ingredient.ofItems(Combat_Maid.Reinforced_Cloth), 20, 1.5f, false);
+    public static final RegistryEntry<ArmorMaterial> COMBAT_MAID_SUIT = registerMaterial("combat_maid_suit", Map.of(
+            ArmorItem.Type.CHESTPLATE, 0
+    ), 0, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, () -> Ingredient.ofItems(net.minecraft.item.Items.BLACK_WOOL), 0.0f, 0.0f, false);
 
     public static RegistryEntry<ArmorMaterial> registerMaterial(String id, Map<ArmorItem.Type, Integer> defensePoints, int enchantability, RegistryEntry<SoundEvent> equipSound, Supplier<Ingredient> repairIngredientSupplier, float toughness, float knockbackResistance, boolean dyeable) {
         List<ArmorMaterial.Layer> layers = List.of(
