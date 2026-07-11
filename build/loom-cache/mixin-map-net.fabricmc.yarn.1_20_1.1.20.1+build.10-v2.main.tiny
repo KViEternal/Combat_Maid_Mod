@@ -1,0 +1,5 @@
+v1	named	intermediary
+METHOD	org/KViEternal/combat_maid/mixin/PlayerEntityMixin	(Lnet/minecraft/entity/EquipmentSlot;)Lnet/minecraft/item/ItemStack;	getEquippedStack	method_6118
+METHOD	org/KViEternal/combat_maid/mixin/PlayerEntityMixin	()Lnet/minecraft/entity/player/PlayerAbilities;	getAbilities	method_31549
+METHOD	org/KViEternal/combat_maid/mixin/PlayerEntityMixin	()Z	isCreative	method_7337
+METHOD	org/KViEternal/combat_maid/mixin/PlayerEntityMixin	()Z	isSpectator	method_7325

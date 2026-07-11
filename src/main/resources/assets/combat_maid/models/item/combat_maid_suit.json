@@ -1,6 +1,14 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "combat_maid:item/combat_maid_suit_item"
-  }
+    "layer0": "combat_maid:item/combat_maid_suit_item_white"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "combat_maid:is_pink": 1.0
+      },
+      "model": "combat_maid:item/combat_maid_suit_pink"
+    }
+  ]
 }

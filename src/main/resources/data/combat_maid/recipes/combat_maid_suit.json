@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "pattern": [
-    "###",
-    "#N#",
-    "#W#"
+    "B B",
+    "BWB",
+    "BWB"
   ],
   "key": {
-    "#": {
-      "item": "combat_maid:reinforced_cloth"
-    },
-    "N": {
-      "item": "minecraft:netherite_chestplate"
+    "B": {
+      "item": "minecraft:black_wool"
     },
     "W": {
-      "item": "minecraft:white_dye"
+      "item": "minecraft:white_wool"
     }
   },
   "result": {
