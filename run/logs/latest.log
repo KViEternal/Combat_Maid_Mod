@@ -1,5 +1,5 @@
-[14:49:20] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.1 with Fabric Loader 0.16.2
-[14:49:20] [main/INFO] (FabricLoader) Loading 55 mods:
+[15:09:38] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.1 with Fabric Loader 0.16.2
+[15:09:38] [main/INFO] (FabricLoader) Loading 55 mods:
 	- combat_maid 1.21.1-v1.0.1-alpha
 	- fabric-api 0.102.1+1.21.1
 	- fabric-api-base 0.4.42+6573ed8c6a
@@ -52,81 +52,207 @@
 	- fabric-transfer-api-v1 5.1.17+1db1cc1f6a
 	- fabric-transitive-access-wideners-v1 6.1.0+1daea2156a
 	- fabricloader 0.16.2
-	- java 21
+	- java 25
 	- minecraft 1.21.1
 	- mixinextras 0.4.1
-[14:49:20] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/KViEternal/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[14:49:20] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[14:49:21] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[14:49:21] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
-[14:49:22] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
-[14:49:24] [Datafixer Bootstrap/INFO] (Minecraft) 226 Datafixer optimizations took 393 milliseconds
-[14:49:30] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[14:49:30] [Render thread/INFO] (Minecraft) Setting user: Player841
-[14:49:30] [Render thread/INFO] (combat_maid) Combat Maids mod successfully initialized!
-[14:49:30] [Render thread/INFO] (combat_maid) Combat Maids mod successfully initialized! (Client-Side)
-[14:49:30] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[14:49:31] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
-[14:49:33] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric, combat_maid, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-blockrenderlayer-v1, fabric-client-tags-api-v1, fabric-command-api-v1, fabric-command-api-v2, fabric-commands-v0, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-keybindings-v0, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-renderer-registries-v1, fabric-rendering-data-attachment-v1, fabric-rendering-fluids-v1, fabric-rendering-v0, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-sound-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader
-[14:49:33] [Worker-Main-10/INFO] (Minecraft) Found unifont_all_no_pua-15.1.05.hex, loading
-[14:49:33] [Worker-Main-7/INFO] (Minecraft) Found unifont_jp_patch-15.1.05.hex, loading
-[14:49:34] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[14:49:34] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[14:49:34] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Headphones (HyperX Cloud III Wireless)
-[14:49:34] [Render thread/INFO] (Minecraft) Sound engine started
-[14:49:34] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[14:49:34] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[14:49:34] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[14:49:34] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[14:49:34] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[14:49:34] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[14:49:34] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[14:49:34] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[14:49:34] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[14:49:35] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[14:49:35] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[14:49:35] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[14:49:35] [Render thread/INFO] (Minecraft) Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
-[14:49:35] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
-[14:49:35] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[14:49:47] [Render thread/INFO] (Minecraft) Found new data pack combat_maid, loading it automatically
-[14:49:47] [Render thread/INFO] (Minecraft) Found new data pack fabric-convention-tags-v2, loading it automatically
-[14:49:47] [Render thread/INFO] (Minecraft) Found new data pack fabric-gametest-api-v1, loading it automatically
-[14:49:48] [Render thread/INFO] (Minecraft) Loaded 1293 recipes
-[14:49:48] [Render thread/INFO] (Minecraft) Loaded 1399 advancements
-[14:49:49] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.485 ms
-[14:49:49] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.21.1
-[14:49:49] [Server thread/INFO] (Minecraft) Generating keypair
-[14:49:50] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[14:49:50] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[14:49:51] [Render thread/INFO] (Minecraft) Time elapsed: 913 ms
-[14:49:51] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[14:49:51] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[14:49:52] [Server thread/ERROR] (Minecraft) Tried to load invalid item: 'Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: combat_maid:elytra_combat_maid_suit'
-[14:49:52] [Server thread/INFO] (Minecraft) Player841[local:E:8cfe8163] logged in with entity id 87 at (205.31066190594976, 66.0, -187.77461962738622)
-[14:49:52] [Server thread/INFO] (Minecraft) Player841 joined the game
-[14:49:53] [Render thread/INFO] (Minecraft) Loaded 9 advancements
-[14:49:55] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[14:49:55] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:49:55] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:49:55] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:49:58] [Server thread/WARN] (Minecraft) UUID of added entity already exists: DrownedEntity['Drowned'/555, l='ServerLevel[New World]', x=351.49, y=27.00, z=-373.50]
-[14:50:00] [Server thread/WARN] (Minecraft) UUID of added entity already exists: DrownedEntity['Drowned'/586, l='ServerLevel[New World]', x=416.01, y=51.00, z=-270.35]
-[14:50:00] [Server thread/WARN] (Minecraft) UUID of added entity already exists: DrownedEntity['Drowned'/588, l='ServerLevel[New World]', x=416.02, y=56.38, z=-273.69]
-[14:50:12] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[14:50:12] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:50:12] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:50:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:50:13] [Server thread/INFO] (Minecraft) Player841 lost connection: Disconnected
-[14:50:13] [Server thread/INFO] (Minecraft) Player841 left the game
-[14:50:13] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[14:50:13] [Server thread/INFO] (Minecraft) Stopping server
-[14:50:13] [Server thread/INFO] (Minecraft) Saving players
-[14:50:13] [Server thread/INFO] (Minecraft) Saving worlds
-[14:50:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:50:21] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:50:21] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:50:22] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World): All chunks are saved
-[14:50:22] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[14:50:22] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[14:50:22] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[15:09:38] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/KViEternal/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[15:09:38] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[15:09:38] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[15:09:38] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/util/Map$Entry (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/util/Map$Entry (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/util/Map$Entry (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/util/Map$Entry (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/util/Map$Entry (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/util/Map$Entry (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/util/Map$Entry (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:39] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/MethodHandles$Lookup (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:40] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[15:09:41] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/String (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:41] [main/ERROR] (FabricLoader/Mixin) Mixin apply for mod fabric-dimensions-v1 failed fabric-dimensions-v1.mixins.json:Schema2832Mixin from mod fabric-dimensions-v1 -> net.minecraft.datafixer.schema.Schema2832: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException Unexpecteded ClassMetadataNotFoundException whilst transforming the mixin class: [MAIN Applicator Phase -> fabric-dimensions-v1.mixins.json:Schema2832Mixin from mod fabric-dimensions-v1 -> Apply Methods -> (Ljava/lang/String;Lcom/mojang/datafixers/types/Type;Ljava/util/Map;)Lcom/mojang/datafixers/types/templates/TaggedChoice;:redirect$zdp000$fabric-dimensions-v1$redirectTaggedChoiceLazy -> Transform LVT -> var=name -> desc=Ljava/lang/String;]
+org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: Unexpecteded ClassMetadataNotFoundException whilst transforming the mixin class: [MAIN Applicator Phase -> fabric-dimensions-v1.mixins.json:Schema2832Mixin from mod fabric-dimensions-v1 -> Apply Methods -> (Ljava/lang/String;Lcom/mojang/datafixers/types/Type;Ljava/util/Map;)Lcom/mojang/datafixers/types/templates/TaggedChoice;:redirect$zdp000$fabric-dimensions-v1$redirectTaggedChoiceLazy -> Transform LVT -> var=name -> desc=Ljava/lang/String;]
+	at org.spongepowered.asm.mixin.transformer.MixinTargetContext.transformMethod(MixinTargetContext.java:520) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyNormalMethod(MixinApplicatorStandard.java:463) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMethods(MixinApplicatorStandard.java:449) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:308) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:246) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) [sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234) [sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202) [sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:422) [fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) [fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) [fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) [fabric-loader-0.16.2.jar:?]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) [?:?]
+	at net.minecraft.datafixer.Schemas.build(Schemas.java:1035) [minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.datafixer.Schemas.create(Schemas.java:329) [minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.datafixer.Schemas.<clinit>(Schemas.java:317) [minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:124) [minecraft-clientOnly-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) [fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) [fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) [fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?]
+Caused by: org.spongepowered.asm.mixin.throwables.ClassMetadataNotFoundException: java.lang.String
+	at org.spongepowered.asm.mixin.transformer.MixinTargetContext.transformSingleDescriptor(MixinTargetContext.java:1016) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTargetContext.transformSingleDescriptor(MixinTargetContext.java:976) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTargetContext.transformLVT(MixinTargetContext.java:573) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTargetContext.transformMethod(MixinTargetContext.java:479) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	... 22 more
+[15:09:41] [main/WARN] (FabricLoader/Mixin) Error loading class: java/lang/invoke/LambdaMetafactory (java.lang.IllegalArgumentException: Unsupported class file major version 69)
+[15:09:41] [main/ERROR] (FabricLoader) Minecraft has crashed!
+net.fabricmc.loader.impl.FormattedException: java.lang.RuntimeException: Mixin transformation of net.minecraft.util.SystemDetails failed
+	at net.fabricmc.loader.impl.FormattedException.ofLocalized(FormattedException.java:63) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:482) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) [fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) [fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?]
+Caused by: java.lang.RuntimeException: Mixin transformation of net.minecraft.util.SystemDetails failed
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:427) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) ~[fabric-loader-0.16.2.jar:?]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[?:?]
+	at net.minecraft.util.crash.CrashReport.<init>(CrashReport.java:35) ~[minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.util.crash.CrashReport.create(CrashReport.java:226) ~[minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:207) ~[minecraft-clientOnly-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.2.jar:?]
+	... 3 more
+Caused by: org.spongepowered.asm.mixin.transformer.throwables.MixinTransformerError: An unexpected critical error was encountered
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:392) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:422) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) ~[fabric-loader-0.16.2.jar:?]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[?:?]
+	at net.minecraft.util.crash.CrashReport.<init>(CrashReport.java:35) ~[minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.util.crash.CrashReport.create(CrashReport.java:226) ~[minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:207) ~[minecraft-clientOnly-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.2.jar:?]
+	... 3 more
+Caused by: org.spongepowered.asm.mixin.transformer.throwables.MixinPreProcessorException: Attach error for fabric-crash-report-info-v1.mixins.json:SystemDetailsMixin from mod fabric-crash-report-info-v1 during activity: [Transform -> Method fillSystemDetails(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V -> INVOKEDYNAMIC -> get()Ljava/util/function/Supplier; -> java/lang/invoke/LambdaMetafactory::metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attach(MixinPreProcessorStandard.java:313) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.createContextFor(MixinPreProcessorStandard.java:277) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.createContextFor(MixinInfo.java:1288) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:203) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:422) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) ~[fabric-loader-0.16.2.jar:?]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[?:?]
+	at net.minecraft.util.crash.CrashReport.<init>(CrashReport.java:35) ~[minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.util.crash.CrashReport.create(CrashReport.java:226) ~[minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:207) ~[minecraft-clientOnly-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.2.jar:?]
+	... 3 more
+Caused by: java.lang.RuntimeException: java.lang.ClassNotFoundException: java.lang.invoke.LambdaMetafactory
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.transformMemberReference(MixinPreProcessorStandard.java:791) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.transformInvokeDynamic(MixinPreProcessorStandard.java:760) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.transform(MixinPreProcessorStandard.java:747) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attach(MixinPreProcessorStandard.java:307) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.createContextFor(MixinPreProcessorStandard.java:277) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.createContextFor(MixinInfo.java:1288) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:203) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:422) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) ~[fabric-loader-0.16.2.jar:?]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[?:?]
+	at net.minecraft.util.crash.CrashReport.<init>(CrashReport.java:35) ~[minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.util.crash.CrashReport.create(CrashReport.java:226) ~[minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:207) ~[minecraft-clientOnly-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.2.jar:?]
+	... 3 more
+Caused by: java.lang.ClassNotFoundException: java.lang.invoke.LambdaMetafactory
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.transformMemberReference(MixinPreProcessorStandard.java:791) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.transformInvokeDynamic(MixinPreProcessorStandard.java:760) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.transform(MixinPreProcessorStandard.java:747) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attach(MixinPreProcessorStandard.java:307) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.createContextFor(MixinPreProcessorStandard.java:277) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.createContextFor(MixinInfo.java:1288) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:203) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202) ~[sponge-mixin-0.15.2+mixin.0.8.7.jar:0.15.2+mixin.0.8.7]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:422) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) ~[fabric-loader-0.16.2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) ~[fabric-loader-0.16.2.jar:?]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[?:?]
+	at net.minecraft.util.crash.CrashReport.<init>(CrashReport.java:35) ~[minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.util.crash.CrashReport.create(CrashReport.java:226) ~[minecraft-common-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:207) ~[minecraft-clientOnly-c2b31d572c-1.21.1-net.fabricmc.yarn.1_21_1.1.21.1+build.3-v2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.2.jar:?]
+	... 3 more
